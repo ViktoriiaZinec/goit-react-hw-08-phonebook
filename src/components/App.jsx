@@ -20,16 +20,18 @@ import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 ///middleware
 
 export const App = () => {
-  const isLoading = useSelector(selectIsLoading);
+  // const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   useEffect(() => {
-    dispatch(refreshUser());
+    dispatch(refreshUser()).then(() => {
+      dispatch(fetchContacts());
+    });
   }, [dispatch]);
 
   return isRefreshing ? (
