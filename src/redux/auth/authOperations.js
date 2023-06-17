@@ -7,11 +7,9 @@ export const axiosUser = axios.create({
 
 const token = {
   set(token) {
-    console.log('set token', token);
     axiosUser.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
   unset() {
-    console.log('unset token');
     axiosUser.defaults.headers.common.Authorization = '';
   },
 };
@@ -34,7 +32,7 @@ export const refreshUser = createAsyncThunk(
   'user/refresh',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
-    console.log('refresh user', state);
+
     const persistToken = state.auth.token;
     if (!persistToken) {
       return thunkAPI.rejectWithValue('No token');

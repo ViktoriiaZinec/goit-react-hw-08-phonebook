@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
-import { selectIsLoading } from 'redux/selectors';
-import css from './Filter/Filter.module.css';
+// import { selectIsLoading } from 'redux/selectors';
+// import css from './Filter/Filter.module.css';
 import LoginPage from '../pages/LoginPage/LoginPage';
 import ContactPage from '../pages/ContactPage/ContactPage';
 

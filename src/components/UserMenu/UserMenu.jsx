@@ -5,7 +5,7 @@ import { getUser } from 'redux/auth/authSelectors';
 
 const UserMenu = () => {
   const { email } = useSelector(getUser);
-  console.log('user :>> ', email);
+
   const dispatch = useDispatch();
   const handleLogout = e => {
     e.preventDefault();
