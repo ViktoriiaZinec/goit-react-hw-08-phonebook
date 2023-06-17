@@ -14,11 +14,3 @@
   border: 1px solid rgb(129, 162, 255);
   border-radius: 5px;
 }
-.loading {
-  color: rgb(87, 130, 204);
-  position: absolute;
-  z-index: 1000;
-  top: 55px;
-  left: 160px;
-  font-size: 20px;
-}
