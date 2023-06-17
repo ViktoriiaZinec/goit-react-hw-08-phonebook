@@ -53,8 +53,7 @@ export const loginUser = createAsyncThunk(
   'users/login',
   async (user, thunkAPI) => {
     try {
-      const res = await axios.post('/users/login', user);
-      // After successful login, add the token to the HTTP header
+      const res = await axiosUser.post('/users/login', user);
       console.log('login user :>> ', res);
       token.set(res.token);
       return res.data;
@@ -66,9 +65,7 @@ export const loginUser = createAsyncThunk(
 
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
-    await axios.post('/users/logout');
-
-    // return { auth: { token: '' } };
+    await axiosUser.post('/users/logout');
     token.unset();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);

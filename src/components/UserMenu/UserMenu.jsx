@@ -9,9 +9,7 @@ const UserMenu = () => {
   const dispatch = useDispatch();
   const handleLogout = e => {
     e.preventDefault();
-    dispatch(logOut()).then(res => {
-      console.log('res', res);
-    });
+    dispatch(logOut());
   };
   return (
     <div>
