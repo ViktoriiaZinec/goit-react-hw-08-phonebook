@@ -18,12 +18,10 @@ export const registerUser = createAsyncThunk(
   'users/signup',
   async (user, thunkAPI) => {
     try {
-      console.log('user', user);
       const { data } = await axiosUser.post('users/signup', user);
       token.set(data.token);
       return data;
     } catch (err) {
-      console.log('err :>> ', err);
       return thunkAPI.rejectWithValue(err.response.status);
     }
   }
@@ -53,8 +51,7 @@ export const loginUser = createAsyncThunk(
   async (user, thunkAPI) => {
     try {
       const res = await axiosUser.post('/users/login', user);
-      console.log('login user :>> ', res);
-      token.set(res.token);
+      token.set(res.data.token);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

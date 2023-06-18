@@ -13,8 +13,7 @@ const LoginPage = () => {
       email: email.value,
       password: password.value,
     };
-
-    dispatch(loginUser(user));
+    dispatch(loginUser(user)).then(() => dispatch(fetchContacts()));
   };
   return (
     <div className={css.container}>

@@ -31,7 +31,6 @@ export const Layout = () => {
             </>
           )}
           <div className={css.animation}></div>
-          {/* <div className={[css.animation, css.start_home].join('')}></div> */}
         </nav>
       </header>
       <div>
@@ -40,12 +39,3 @@ export const Layout = () => {
     </>
   );
 };
-
-// <nav>
-//   <a href="#">Home</a>
-//   <a href="#">About</a>
-//   <a href="#">Blog</a>
-//   <a href="#">Portefolio</a>
-//   <a href="#">Contact</a>
-//   <div class="animation start-home"></div>
-// </nav>;

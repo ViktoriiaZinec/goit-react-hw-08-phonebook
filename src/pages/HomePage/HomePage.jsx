@@ -4,7 +4,7 @@ import { getUser, selectIsLoggedIn } from 'redux/auth/authSelectors';
 const HomePage = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const { name } = useSelector(getUser);
-  console.log('isLoggedIn :>> ', isLoggedIn);
+
   return (
     <div className={css.container}>
       <div className={css.screen}>

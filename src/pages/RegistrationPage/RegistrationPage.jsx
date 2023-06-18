@@ -14,7 +14,6 @@ export const RegistrationPage = () => {
       password: password.value,
     };
     dispatch(registerUser(user)).then(res => {
-      console.log('result :>> ', res);
       if (res.payload === 400) {
         return alert('This account already exists. Please Log In');
       }

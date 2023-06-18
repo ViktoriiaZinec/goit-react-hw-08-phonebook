@@ -4,9 +4,7 @@ nav {
   z-index: 999;
   left: 50%;
   transform: translateX(-50%);
-
   margin: 27px auto 0;
-
   width: 590px;
   height: 50px;
   background-color: #4c489d;
@@ -44,21 +42,20 @@ a:nth-child(3) {
   width: 150px;
 }
 
-/* nav .start_home, */
 a:nth-child(1):hover {
   width: 100px;
   left: 0;
   background-color: #45a0fb;
   border-radius: 6px;
 }
-/* nav .start_about, */
+
 a:nth-child(2):hover {
   width: 150px;
   left: 0;
   background-color: #cfa9df;
   border-radius: 6px;
 }
-/* nav .start_blog, */
+
 a:nth-child(3):hover {
   width: 150px;
   left: 0;

@@ -18,13 +18,8 @@ import { RegistrationPage } from 'pages/RegistrationPage/RegistrationPage';
 import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 
 export const App = () => {
-  // const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
-
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
 
   useEffect(() => {
     dispatch(refreshUser());

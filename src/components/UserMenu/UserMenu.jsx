@@ -6,7 +6,6 @@ import css from './UserMenu.module.css';
 
 const UserMenu = () => {
   const { email } = useSelector(getUser);
-  console.log('email :>> ', email);
 
   const dispatch = useDispatch();
   const handleLogout = e => {
