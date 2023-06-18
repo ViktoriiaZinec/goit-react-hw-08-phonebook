@@ -17,8 +17,6 @@ import HomePage from 'pages/HomePage/HomePage';
 import { RegistrationPage } from 'pages/RegistrationPage/RegistrationPage';
 import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 
-///middleware
-
 export const App = () => {
   // const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
@@ -29,9 +27,7 @@ export const App = () => {
   // }, [dispatch]);
 
   useEffect(() => {
-    dispatch(refreshUser()).then(() => {
-      dispatch(fetchContacts());
-    });
+    dispatch(refreshUser());
   }, [dispatch]);
 
   return isRefreshing ? (
@@ -40,7 +36,7 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-        {/* {isLoading && <p className={css.loading}>Loading...</p>} */}
+
         <Route
           path="registration"
           element={

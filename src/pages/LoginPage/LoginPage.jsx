@@ -1,6 +1,7 @@
 import { loginUser } from 'redux/auth/authOperations';
 import css from './LoginPage.module.css';
 import { useDispatch } from 'react-redux';
+import { fetchContacts } from 'redux/operations';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,7 @@ const LoginPage = () => {
       email: email.value,
       password: password.value,
     };
+
     dispatch(loginUser(user));
   };
   return (
@@ -21,7 +23,6 @@ const LoginPage = () => {
           <h1 className={css.title}>Login</h1>
           <form className={css.login} onSubmit={handleSubmit}>
             <div className={css.login__field}>
-              {/* <label>Email address</label> */}
               <input
                 type="email"
                 name="email"
@@ -29,10 +30,8 @@ const LoginPage = () => {
                 required
                 className={css.login__input}
               />
-              {/* <div>We'll never share your email with anyone else.</div> */}
             </div>
             <div className={css.login__field}>
-              {/* <label>Password</label> */}
               <input
                 type="password"
                 name="password"
@@ -41,9 +40,7 @@ const LoginPage = () => {
                 className={css.login__input}
               />
             </div>
-            {/* <div>
-                <label>Check me out</label>
-              </div> */}
+
             <button type="submit" className={css.login__submit}>
               <span className={css.button__text}>Log In Now</span>
             </button>

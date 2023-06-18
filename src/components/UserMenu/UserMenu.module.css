@@ -1,0 +1,34 @@
+.email {
+  text-transform: none;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  top: 3px;
+  right: 130px;
+  /* left: 250px; */
+}
+.btn_logout {
+  background-color: #ffffff;
+  border: 1px solid #d4d3e8;
+  font-size: 14px;
+  padding: 14px 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 100px;
+  color: #4c489d;
+  box-shadow: 0px 2px 2px #5c5696;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 6px;
+  position: absolute;
+  left: 488px;
+  top: 2px;
+}
+
+.logbtn_logout:active,
+.btn_logout:focus,
+.btn_logout:hover {
+  border-color: #6a679e;
+  outline: none;
+}
