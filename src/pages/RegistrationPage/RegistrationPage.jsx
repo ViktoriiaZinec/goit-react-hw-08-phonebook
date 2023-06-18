@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/auth/authOperations';
+import css from './RegistartionPage.module.css';
 
 export const RegistrationPage = () => {
   const dispatch = useDispatch();
@@ -12,33 +13,58 @@ export const RegistrationPage = () => {
       email: email.value,
       password: password.value,
     };
-    dispatch(registerUser(user));
+    dispatch(registerUser(user)).then(res => {
+      console.log('result :>> ', res);
+      if (res.payload === 400) {
+        return alert('This account already exists. Please Log In');
+      }
+    });
   };
   return (
-    <>
-      <h1>Registration</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name</label>
-          <input type="ntext" name="name" required />
-          <div>Please tipe your name</div>
+    <div className={css.container}>
+      <div className={css.screen}>
+        <div className={css.screen__content}>
+          <h1 className={css.title}>Registration</h1>
+          <form onSubmit={handleSubmit} className={css.login}>
+            <div className={css.login__field}>
+              <input
+                type="text"
+                name="name"
+                placeholder="User name"
+                required
+                className={css.login__input}
+              />
+            </div>
+            <div className={css.login__field}>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+                className={css.login__input}
+              />
+            </div>
+            <div className={css.login__field}>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+                className={css.login__input}
+              />
+            </div>
+            <button type="submit" className={css.login__submit}>
+              <span className={css.button__text}>Sign Up Now</span>
+            </button>
+          </form>
         </div>
-        <div>
-          <label>Email address</label>
-          <input type="email" name="email" required />
-          <div>We'll never share your email with anyone else.</div>
+        <div className={css.screen__background}>
+          <span className={css.screen__background__shape4}></span>
+          <span className={css.screen__background__shape3}></span>
+          <span className={css.screen__background__shape2}></span>
+          <span className={css.screen__background__shape1}></span>
         </div>
-        <div>
-          <label>Password</label>
-          <input type="password" name="password" required />
-        </div>
-        <div>
-          <label>Check me out</label>
-        </div>
-        <button type="submit">Sign Up</button>
-      </form>
-    </>
+      </div>
+    </div>
   );
 };
-
-// export default RegistrationPage;

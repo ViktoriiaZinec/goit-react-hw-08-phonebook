@@ -23,7 +23,8 @@ export const registerUser = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (err) {
-      return thunkAPI.rejectWithValue(err.message);
+      console.log('err :>> ', err);
+      return thunkAPI.rejectWithValue(err.response.status);
     }
   }
 );

@@ -15,28 +15,48 @@ const LoginPage = () => {
     dispatch(loginUser(user));
   };
   return (
-    <section>
-      <div className={css.login_page}>
-        <h1>Login</h1>
-        <form className={css.form_login_page} onSubmit={handleSubmit}>
-          <div>
-            <label>Email address</label>
-            <input type="email" name="email" className={css.form_control} />
-            <div>We'll never share your email with anyone else.</div>
-          </div>
-          <div>
-            <label>Password</label>
-            <input type="password" name="password" />
-          </div>
-          <div>
-            <label>Check me out</label>
-          </div>
-          <button type="submit" className={css.btn_form_control}>
-            Submit
-          </button>
-        </form>
+    <div className={css.container}>
+      <div className={css.screen}>
+        <div className={css.screen__content}>
+          <h1 className={css.title}>Login</h1>
+          <form className={css.login} onSubmit={handleSubmit}>
+            <div className={css.login__field}>
+              {/* <label>Email address</label> */}
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+                className={css.login__input}
+              />
+              {/* <div>We'll never share your email with anyone else.</div> */}
+            </div>
+            <div className={css.login__field}>
+              {/* <label>Password</label> */}
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+                className={css.login__input}
+              />
+            </div>
+            {/* <div>
+                <label>Check me out</label>
+              </div> */}
+            <button type="submit" className={css.login__submit}>
+              <span className={css.button__text}>Log In Now</span>
+            </button>
+          </form>
+        </div>
+        <div className={css.screen__background}>
+          <span className={css.screen__background__shape4}></span>
+          <span className={css.screen__background__shape3}></span>
+          <span className={css.screen__background__shape2}></span>
+          <span className={css.screen__background__shape1}></span>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
