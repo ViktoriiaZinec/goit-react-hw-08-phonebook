@@ -18,14 +18,20 @@ const ContactPage = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
   return (
-    <>
-      <h1 className={css.title}>Phonebook</h1>
-      <AddContacts />
-      <h2>Contacts</h2>
-      <Filter />
-      <div>{isLoading && 'Request in progress...'}</div>
-      <ContactsList />
-    </>
+    <section>
+      <div className={css.contact_page}>
+        <div className={css.contacts}>
+          <h2 className={css.contacts_title}>Contacts</h2>
+          <Filter />
+          <div>{isLoading && 'Request in progress...'}</div>
+          <ContactsList />
+        </div>
+        <div className={css.contacts}>
+          <h2 className={css.contacts_title}>Phonebook</h2>
+          <AddContacts />
+        </div>
+      </div>
+    </section>
   );
 };
 

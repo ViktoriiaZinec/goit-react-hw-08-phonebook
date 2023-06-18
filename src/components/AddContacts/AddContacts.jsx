@@ -43,9 +43,7 @@ export const AddContacts = ({ id }) => {
   return (
     <form className={css.form} onSubmit={handleSubmit}>
       <div className={css.form_name}>
-        <label htmlFor="input1" className={css.form_label}>
-          Name
-        </label>
+        <p className={css.form_label}>Fill in name</p>
         <input
           type="text"
           name="name"
@@ -55,7 +53,9 @@ export const AddContacts = ({ id }) => {
           required
           onChange={handleChangeName}
           value={name}
+          className={css.input}
         />
+        <p className={css.form_label}>Fill in number</p>
         <input
           type="tel"
           name="number"
@@ -65,6 +65,7 @@ export const AddContacts = ({ id }) => {
           required
           onChange={handleChangeNumber}
           value={number}
+          className={css.input}
         />
       </div>
 

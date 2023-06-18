@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
+// import { fetchContacts } from 'redux/operations';
 // import { selectIsLoading } from 'redux/selectors';
 // import css from './Filter/Filter.module.css';
 import LoginPage from '../pages/LoginPage/LoginPage';
@@ -53,7 +53,6 @@ export const App = () => {
           }
         />
 
-        {/* <Route path="login" element={<LoginPage />} /> */}
         <Route
           path="contacts"
           element={
@@ -65,7 +64,3 @@ export const App = () => {
     </Routes>
   );
 };
-
-// В layout треба розділити приватні маршрути??? так щоб home завжди був, а контакти зявлялися тільки коли
-
-// const isLoggedIn = useSelector(selectIsLoggedIn);

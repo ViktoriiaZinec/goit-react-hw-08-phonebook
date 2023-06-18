@@ -13,6 +13,7 @@ export function Filter({ setFilter, filterName }) {
       <input
         className={css.input_find}
         type="text"
+        placeholder="Name"
         value={filter}
         onChange={event => dispatch(setStatusFilter(event.currentTarget.value))}
       />

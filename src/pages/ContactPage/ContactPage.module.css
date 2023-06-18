@@ -1,3 +1,8 @@
-.title {
+.contact_page {
+  display: flex;
   margin-top: 80px;
+  padding: 0 60px;
+}
+.contacts {
+  width: 50%;
 }

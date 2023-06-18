@@ -48,20 +48,20 @@ a:nth-child(3) {
 a:nth-child(1):hover {
   width: 100px;
   left: 0;
-  background-color: #1abc9c;
+  background-color: #45a0fb;
   border-radius: 6px;
 }
 /* nav .start_about, */
 a:nth-child(2):hover {
   width: 150px;
   left: 0;
-  background-color: #c8b327;
+  background-color: #cfa9df;
   border-radius: 6px;
 }
 /* nav .start_blog, */
 a:nth-child(3):hover {
   width: 150px;
   left: 0;
-  background-color: #3498db;
+  background-color: #34d5db;
   border-radius: 6px;
 }

@@ -1,16 +1,25 @@
-.filter_container {
-  margin-left: 40px;
+form {
+  display: block;
+
+  color: rgb(18, 18, 19);
+  margin-right: auto;
+  margin-left: auto;
 }
+
 .input_find {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   text-align: left;
   padding: 10px;
   margin-bottom: 20px;
-  outline-color: blue;
-  width: 23%;
-  height: 15px;
-  border: 1px solid rgb(129, 162, 255);
+  outline-color: rgb(36, 74, 178);
+  width: 50%;
+  border: 1px solid #4c489d;
   border-radius: 5px;
+}
+.title_find {
+  color: #4c489d;
+  font-size: 14px;
+  line-height: 1.2;
+  margin-top: 20px;
 }
