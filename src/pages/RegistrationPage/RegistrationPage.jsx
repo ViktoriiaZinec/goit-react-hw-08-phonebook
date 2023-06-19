@@ -1,7 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/auth/authOperations';
 import css from './RegistartionPage.module.css';
-
+import { FaAngleRight } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
+import { FaLock } from 'react-icons/fa';
 export const RegistrationPage = () => {
   const dispatch = useDispatch();
 
@@ -33,6 +36,7 @@ export const RegistrationPage = () => {
                 required
                 className={css.login__input}
               />
+              <FaUser size={16} className={css.icon_user} />
             </div>
             <div className={css.login__field}>
               <input
@@ -42,6 +46,7 @@ export const RegistrationPage = () => {
                 required
                 className={css.login__input}
               />
+              <FaEnvelope size={16} className={css.icon_envelope} />
             </div>
             <div className={css.login__field}>
               <input
@@ -51,9 +56,11 @@ export const RegistrationPage = () => {
                 required
                 className={css.login__input}
               />
+              <FaLock size={16} className={css.icon_envelope} />
             </div>
             <button type="submit" className={css.login__submit}>
               <span className={css.button__text}>Sign Up Now</span>
+              <FaAngleRight size={20} className={css.button__icon} />
             </button>
           </form>
         </div>

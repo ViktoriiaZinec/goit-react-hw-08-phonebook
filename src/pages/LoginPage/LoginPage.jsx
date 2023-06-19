@@ -2,6 +2,7 @@ import { loginUser } from 'redux/auth/authOperations';
 import css from './LoginPage.module.css';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
+import { FaAngleRight, FaEnvelope, FaLock } from 'react-icons/fa';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ const LoginPage = () => {
                 required
                 className={css.login__input}
               />
+              <FaEnvelope size={16} className={css.icon_envelope} />
             </div>
             <div className={css.login__field}>
               <input
@@ -38,10 +40,12 @@ const LoginPage = () => {
                 required
                 className={css.login__input}
               />
+              <FaLock size={16} className={css.icon_envelope} />
             </div>
 
             <button type="submit" className={css.login__submit}>
               <span className={css.button__text}>Log In Now</span>
+              <FaAngleRight size={20} className={css.button__icon} />
             </button>
           </form>
         </div>
