@@ -56,6 +56,7 @@ const authSlise = createSlice({
       })
       .addCase(registerUser.fulfilled, (state, { payload }) => {
         state.status = fetchStatus.Success;
+        state.user = payload.user;
         state.token = payload.token;
         state.isLoggedIn = true;
       })
