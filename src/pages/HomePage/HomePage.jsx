@@ -1,12 +1,11 @@
 import { useSelector } from 'react-redux';
 import css from './HomePage.module.css';
-import { selectIsLoggedIn } from 'redux/auth/authSelectors';
+import { getUser, selectIsLoggedIn } from 'redux/auth/authSelectors';
 import { useAuth } from 'hooks/useAuth';
 const HomePage = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const { user } = useAuth();
-  // const { isLoggedIn } = useAuth();
-  // console.log('user :>> ', user);
+  console.log('user :>> ', user);
 
   return (
     <div className={css.container}>

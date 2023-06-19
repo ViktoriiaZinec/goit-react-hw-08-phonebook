@@ -1,10 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/authOperations';
+
 import css from './UserMenu.module.css';
 import { useAuth } from 'hooks/useAuth';
 
 const UserMenu = () => {
+  // const { email } = useSelector(getUser);
   const { user } = useAuth();
   console.log('user :>> ', user);
 
