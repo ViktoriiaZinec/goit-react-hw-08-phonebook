@@ -1,11 +1,12 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/authOperations';
-import { getUser } from 'redux/auth/authSelectors';
 import css from './UserMenu.module.css';
+import { useAuth } from 'hooks/useAuth';
 
 const UserMenu = () => {
-  const { email } = useSelector(getUser);
+  const { user } = useAuth();
+  console.log('user :>> ', user);
 
   const dispatch = useDispatch();
   const handleLogout = e => {
@@ -14,7 +15,7 @@ const UserMenu = () => {
   };
   return (
     <div className={css.container}>
-      <p className={css.email}>{email}</p>
+      <p className={css.email}>{user.email}</p>
       <button onClick={handleLogout} className={css.btn_logout}>
         Logout
       </button>

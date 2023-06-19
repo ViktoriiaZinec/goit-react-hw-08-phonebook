@@ -1,9 +1,11 @@
 import { useSelector } from 'react-redux';
 import css from './HomePage.module.css';
-import { getUser, selectIsLoggedIn } from 'redux/auth/authSelectors';
+import { selectIsLoggedIn } from 'redux/auth/authSelectors';
+import { useAuth } from 'hooks/useAuth';
 const HomePage = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const { name } = useSelector(getUser);
+  const { user } = useAuth();
+  // console.log('user :>> ', user);
 
   return (
     <div className={css.container}>
@@ -16,7 +18,7 @@ const HomePage = () => {
             </h1>
           ) : (
             <h1 className={css.title}>
-              Hi, {name}! <br />
+              Hi, {user.name}! <br />
               We're glad you're here!
               <br />
             </h1>
