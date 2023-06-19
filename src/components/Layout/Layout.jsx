@@ -1,11 +1,10 @@
 import UserMenu from 'components/UserMenu/UserMenu';
-import { useSelector } from 'react-redux';
 import { NavLink, Outlet } from 'react-router-dom';
-import { selectIsLoggedIn } from 'redux/auth/authSelectors';
 import css from './Layout.jmodule.css';
+import { useAuth } from 'hooks/useAuth';
 
 export const Layout = () => {
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const { isLoggedIn } = useAuth();
   return (
     <>
       <header>

@@ -5,6 +5,7 @@ import { useAuth } from 'hooks/useAuth';
 const HomePage = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const { user } = useAuth();
+  // const { isLoggedIn } = useAuth();
   // console.log('user :>> ', user);
 
   return (
