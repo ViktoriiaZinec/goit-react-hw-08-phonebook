@@ -6,9 +6,7 @@ import css from './UserMenu.module.css';
 import { useAuth } from 'hooks/useAuth';
 
 const UserMenu = () => {
-  // const { email } = useSelector(getUser);
   const { user } = useAuth();
-  console.log('user :>> ', user);
 
   const dispatch = useDispatch();
   const handleLogout = e => {

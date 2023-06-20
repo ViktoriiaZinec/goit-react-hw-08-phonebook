@@ -33,6 +33,7 @@ export const RegistrationPage = () => {
                 type="text"
                 name="name"
                 placeholder="User name"
+                autoComplete="username"
                 required
                 className={css.login__input}
               />
@@ -43,6 +44,7 @@ export const RegistrationPage = () => {
                 type="email"
                 name="email"
                 placeholder="Email"
+                autoComplete="username"
                 required
                 className={css.login__input}
               />
@@ -53,6 +55,7 @@ export const RegistrationPage = () => {
                 type="password"
                 name="password"
                 placeholder="Password"
+                autoComplete="current-password"
                 required
                 className={css.login__input}
               />

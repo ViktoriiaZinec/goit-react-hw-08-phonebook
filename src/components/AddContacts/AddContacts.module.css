@@ -1,3 +1,7 @@
+.form_container {
+  position: relative;
+}
+
 .input {
   display: flex;
   justify-content: center;
@@ -35,4 +39,39 @@
 .btn_primary:hover {
   background-color: #36326e;
   outline: none;
+}
+
+.error_message_name {
+  position: absolute;
+  top: -6px;
+  left: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 46px;
+  color: #4c489d;
+  background-color: #fff;
+  border: 1px solid #4c489d;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
+}
+.error_message_number {
+  position: absolute;
+  top: 84px;
+  left: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 46px;
+  color: #4c489d;
+  background-color: #fff;
+  border: 1px solid #4c489d;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
 }

@@ -17,39 +17,72 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
+// const contactsSlice = createSlice({
+//   name: 'contacts',
+//   initialState,
+
+//   reducers: {
+//     setStatusFilter(state, action) {
+//       state.filter = action.payload;
+//     },
+//   },
+//   extraReducers: {
+//     [fetchContacts.pending]: handlePending,
+//     [fetchContacts.fulfilled]: (state, action) => {
+//       state.items = action.payload;
+//       state.isLoading = false;
+//       state.error = null;
+//     },
+//     [fetchContacts.rejected]: handleRejected,
+
+//     [addContact.pending]: handlePending,
+//     [addContact.fulfilled]: (state, action) => {
+//       state.items.push(action.payload);
+//       state.isLoading = false;
+//       state.error = null;
+//     },
+//     [addContact.rejected]: handleRejected,
+
+//     [deleteContact.pending]: handlePending,
+//     [deleteContact.fulfilled]: (state, action) => {
+//       state.items = state.items.filter(item => item.id !== action.payload.id);
+//       state.isLoading = false;
+//       state.error = null;
+//     },
+//     [deleteContact.rejected]: handleRejected,
+//   },
+// });
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
-
   reducers: {
     setStatusFilter(state, action) {
       state.filter = action.payload;
     },
   },
-  extraReducers: {
-    [fetchContacts.pending]: handlePending,
-    [fetchContacts.fulfilled]: (state, action) => {
-      state.items = action.payload;
-      state.isLoading = false;
-      state.error = null;
-    },
-    [fetchContacts.rejected]: handleRejected,
-
-    [addContact.pending]: handlePending,
-    [addContact.fulfilled]: (state, action) => {
-      state.items.push(action.payload);
-      state.isLoading = false;
-      state.error = null;
-    },
-    [addContact.rejected]: handleRejected,
-
-    [deleteContact.pending]: handlePending,
-    [deleteContact.fulfilled]: (state, action) => {
-      state.items = state.items.filter(item => item.id !== action.payload.id);
-      state.isLoading = false;
-      state.error = null;
-    },
-    [deleteContact.rejected]: handleRejected,
+  extraReducers: builder => {
+    builder
+      .addCase(fetchContacts.pending, handlePending)
+      .addCase(fetchContacts.fulfilled, (state, action) => {
+        state.items = action.payload;
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(fetchContacts.rejected, handleRejected)
+      .addCase(addContact.pending, handlePending)
+      .addCase(addContact.fulfilled, (state, action) => {
+        state.items.push(action.payload);
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(addContact.rejected, handleRejected)
+      .addCase(deleteContact.pending, handlePending)
+      .addCase(deleteContact.fulfilled, (state, action) => {
+        state.items = state.items.filter(item => item.id !== action.payload.id);
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(deleteContact.rejected, handleRejected);
   },
 });
 
