@@ -5,16 +5,11 @@ import { fetchContacts } from 'redux/operations';
 import { FaAngleRight, FaEnvelope, FaLock } from 'react-icons/fa';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-// import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
-  // const isRegistered = checkIfEmailRegistere(user.email);
-
-  // if (!isRegistered) {
-  //   toast.error('Email is not registered');
-  //   return; // Stop the form submission
-  // }
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is required'),
@@ -22,65 +17,74 @@ const LoginPage = () => {
   });
 
   const handleSubmit = values => {
-    dispatch(loginUser(values)).then(() => dispatch(fetchContacts()));
+    dispatch(loginUser(values)).then(data => {
+      console.log('data :>> ', data.meta.rejectedWithValue);
+      if (data.meta.rejectedWithValue) {
+        return toast.error('Login or password is incorrect');
+      }
+      dispatch(fetchContacts());
+    });
   };
 
   return (
-    <div className={css.container}>
-      <div className={css.screen}>
-        <div className={css.screen__content}>
-          <h1 className={css.title}>Login</h1>
-          <Formik
-            initialValues={{ email: '', password: '' }}
-            validationSchema={validationSchema}
-            onSubmit={handleSubmit}
-          >
-            <Form className={css.login}>
-              <div className={css.login__field}>
-                <Field
-                  type="email"
+    <>
+      <ToastContainer />
+      <div className={css.container}>
+        <div className={css.screen}>
+          <div className={css.screen__content}>
+            <h1 className={css.title}>Login</h1>
+            <Formik
+              initialValues={{ email: '', password: '' }}
+              validationSchema={validationSchema}
+              onSubmit={handleSubmit}
+            >
+              <Form className={css.login}>
+                <div className={css.login__field}>
+                  <Field
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    autoComplete="username"
+                    className={css.login__input}
+                  />
+                  <FaEnvelope size={16} className={css.icon_envelope} />
+                </div>
+                <ErrorMessage
                   name="email"
-                  placeholder="Email"
-                  autoComplete="username"
-                  className={css.login__input}
+                  component="div"
+                  className={css.error_message_email}
                 />
-                <FaEnvelope size={16} className={css.icon_envelope} />
-              </div>
-              <ErrorMessage
-                name="email"
-                component="div"
-                className={css.error_message}
-              />
-              <div className={css.login__field}>
-                <Field
-                  type="password"
+                <div className={css.login__field}>
+                  <Field
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    autoComplete="current-password"
+                    className={css.login__input}
+                  />
+                  <FaLock size={16} className={css.icon_envelope} />
+                </div>
+                <ErrorMessage
                   name="password"
-                  placeholder="Password"
-                  autoComplete="current-password"
-                  className={css.login__input}
+                  component="div"
+                  className={css.error_message_password}
                 />
-                <FaLock size={16} className={css.icon_envelope} />
-              </div>
-              <ErrorMessage
-                name="password"
-                component="div"
-                className={css.error_message}
-              />
-              <button type="submit" className={css.login__submit}>
-                <span className={css.button__text}>Log In Now</span>
-                <FaAngleRight size={20} className={css.button__icon} />
-              </button>
-            </Form>
-          </Formik>
-        </div>
-        <div className={css.screen__background}>
-          <span className={css.screen__background__shape4}></span>
-          <span className={css.screen__background__shape3}></span>
-          <span className={css.screen__background__shape2}></span>
-          <span className={css.screen__background__shape1}></span>
+                <button type="submit" className={css.login__submit}>
+                  <span className={css.button__text}>Log In Now</span>
+                  <FaAngleRight size={20} className={css.button__icon} />
+                </button>
+              </Form>
+            </Formik>
+          </div>
+          <div className={css.screen__background}>
+            <span className={css.screen__background__shape4}></span>
+            <span className={css.screen__background__shape3}></span>
+            <span className={css.screen__background__shape2}></span>
+            <span className={css.screen__background__shape1}></span>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -85,7 +85,8 @@
 }
 
 .login {
-  width: 320px;
+  position: relative;
+  width: 300px;
   padding: 30px;
   padding-top: 40px;
 }
@@ -151,4 +152,39 @@
   font-size: 24px;
   margin-left: auto;
   color: #7875b5;
+}
+
+.error_message_email {
+  position: absolute;
+  top: 24px;
+  left: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 46px;
+  color: #4c489d;
+  background-color: #fff;
+  border: 1px solid #4c489d;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
+}
+.error_message_password {
+  position: absolute;
+  top: 100px;
+  left: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 46px;
+  color: #4c489d;
+  background-color: #fff;
+  border: 1px solid #4c489d;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
 }
